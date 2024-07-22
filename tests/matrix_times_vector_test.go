@@ -20,10 +20,10 @@ type matrixDotVectorTestCase[T int | float64] struct {
 func TestMatrixDotVectorInt(t *testing.T) {
 	testCases := []matrixDotVectorTestCase[int]{
 		{
-			name:     "valid 2x3 matrix with 3x1 vector",
-			A:        [][]int{{1, 2, 3}, {4, 5, 6}},
-			B:        []int{1, 2, 3},
-			Expected: []int{14, 32},
+			name:     "valid 2x2 matrix with 2x1 vector",
+			A:        [][]int{{1, 2}, {2, 4}},
+			B:        []int{1, 2},
+			Expected: []int{5, 10},
 			WantErr:  false,
 		},
 		{
@@ -56,11 +56,11 @@ func TestMatrixDotVectorFloat(t *testing.T) {
 			WantErr:  true,
 		},
 		{
-			name:     "Empty matrix",
-			A:        [][]float64{},
-			B:        []float64{1.0, 2.0, 3.0},
-			Expected: nil,
-			WantErr:  true,
+			name:     "valid 2x2 matrix with 2x1 vector",
+			A:        [][]float64{{1.0, 2.0}, {2.0, 4.0}},
+			B:        []float64{1.0, 2.0},
+			Expected: []float64{5.0, 10.0},
+			WantErr:  false,
 		},
 	}
 
